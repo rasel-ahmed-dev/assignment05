@@ -6,10 +6,12 @@ void main() {
 
 class ContactApp extends StatelessWidget {
   const ContactApp({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: ContactScreen(),
     );
   }
@@ -46,6 +48,7 @@ class ContactScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Contact List"),
+        titleTextStyle: TextStyle(color: Colors.white, fontSize: 20.0),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
@@ -87,7 +90,7 @@ class ContactScreen extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(
                   "Add",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),
             ),

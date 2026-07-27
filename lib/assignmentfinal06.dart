@@ -20,28 +20,7 @@ class MyApp extends StatelessWidget{
 class ContactScrn extends StatelessWidget{
   ContactScrn({super.key});
 
-  final List<Map<String, String>> contacts = [
-    {
-      "name" : "Jawad",
-      "phone" : "01877-777777"
-    },
-    {
-      "name" : "Ferdous",
-      "phone" : "01673-777777"
-    },
-    {
-      "name": "Hasan",
-      "phone": "01745-777777",
-    },
-    {
-      "name": "Hasan",
-      "phone": "01745-777777",
-    },
-    {
-      "name": "Hasan",
-      "phone": "01745-777777",
-    },
-  ];
+  
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -52,92 +31,36 @@ class ContactScrn extends StatelessWidget{
       ),
 
       body: Padding(
-        padding: EdgeInsets.all(15.0),
-
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             TextField(
               decoration: InputDecoration(
-                hintText: "Hasan",
+                labelText: "Name :",
                 border: OutlineInputBorder(),
-
+                hintText: "Enter Your Name",
+                helperText: "Write Your Full Name",  
+                filled: true,
+                fillColor: const Color.fromARGB(255, 207, 204, 195)
               ),
             ),
-
-            SizedBox(height: 16.0,),
-
-            TextField(
-              decoration: InputDecoration(
-                hintText: "01745-777777",
-                border: OutlineInputBorder(),
-              ),
-            ),
-
-            SizedBox(height: 16.0,),
-
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueGrey,
-                ),
-                onPressed: (){},
-                child: Text(
-                  "Add",
-                  style: TextStyle(fontSize: 16, color:Colors.white70),
-                ),
-              ),
-            ),
-
             SizedBox(height: 20.0,),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Card(
-                    child: ListTile(
-                    
-                      leading: Icon(Icons.person, size: 45.0, color: Colors.brown,),
-                      title: Text("Mahfuz Ahmed", style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold), ),
-                      subtitle: Text("01728-609080", style: TextStyle(fontSize: 10.0),),
-                      trailing: Icon(Icons.call, color: Colors.blue, size: 30.0,),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: Icon(Icons.person, size: 45.0, color: Colors.brown,),
-                      title: Text("Mahfuz Ahmed", style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold), ),
-                      subtitle: Text("01728-609080", style: TextStyle(fontSize: 10.0),),
-                      trailing: Icon(Icons.call, color: Colors.blue, size: 30.0,),
-                    ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      leading: Icon(Icons.person, size: 45.0, color: Colors.brown,),
-                      title: Text("Mahfuz Ahmed", style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold), ),
-                      subtitle: Text("01728-609080", style: TextStyle(fontSize: 10.0),),
-                      trailing: Icon(Icons.call, color: Colors.blue, size: 30.0,),
-                    ),
-                  ),
-
-                   Card(
-                    child: ListTile(
-                      leading: Icon(Icons.person, size: 45.0, color: Colors.brown,),
-                      title: Text("Mahfuz Ahmed", style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold), ),
-                      subtitle: Text("01728-609080", style: TextStyle(fontSize: 10.0),),
-                      trailing: Icon(Icons.call, color: Colors.blue, size: 30.0,),
-                    ),
-                  ),
-
-                   Card(
-                    child: ListTile(
-                      leading: Icon(Icons.person, size: 45.0, color: Colors.brown,),
-                      title: Text("Mahfuz Ahmed", style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold), ),
-                      subtitle: Text("01728-609080", style: TextStyle(fontSize: 10.0),),
-                      trailing: Icon(Icons.call, color: Colors.blue, size: 30.0,),
-                    ),
-                  ),
-                ],
+            FilledButton(
+              onPressed: () {
+                
+              },
+              
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+                foregroundColor: Colors.white,
+                minimumSize: Size(double.infinity, 30.0),
+                padding: EdgeInsets.all(16.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4)
+              
+                )
               ),
+              child: Text("Submit"),
             )
           ],
         ),
